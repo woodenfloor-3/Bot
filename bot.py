@@ -4,13 +4,8 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, CallbackContext
 from telegram.constants import ParseMode
 from telegram.ext import filters
+from config import SAUCENAO_API_KEY,BOT_TOKEN
 
-# Replace with your actual Telegram bot token
-BOT_TOKEN = '7171709688:AAHP4n_elhnMZxWK7HbCcsBqhFh_8VrLVqY'
-
-# Replace with your actual SauceNAO API URL and key
-SAUCENAO_API_URL = 'https://saucenao.com/search.php?'
-SAUCENAO_API_KEY = 'ab523b9c520c7a1ba4383ee0d15c6a7ec1242ca0'
 
 # Initialize logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -28,9 +23,9 @@ def perform_search(api_url, api_key, image_data):
     files = {'file': image_data}
 
     response = requests.post(api_url, data=data, files=files)
-    response.raise_for_status()  # Raise an exception for non-200 status codes
+    response.raise_for_status()  
 
-    return response.json()  # Assuming JSON response format
+    return response.json() 
 
 # Start command handler
 async def start(update: Update, context: CallbackContext):
