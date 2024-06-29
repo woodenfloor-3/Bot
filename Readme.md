@@ -7,7 +7,7 @@ This Telegram bot allows users to perform reverse image searches using SauceNAO 
 ```bash
 # Clone repository and navigate to project directory
 git clone https://github.com/woodenfloor-3/Bot.git
-cd Bot
+cd Bot```
 
 # Set up virtual environment (optional but recommended)
 python -m venv env
